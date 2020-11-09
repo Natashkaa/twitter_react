@@ -1,0 +1,49 @@
+.App {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.firstRow{
+    position: relative;
+    width: 100%;
+    height: 90%
+}
+.birdSide{
+    background-image: url(../images/twitter_mainTheme.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.text{
+    color: white;
+    font-size: 20px;
+    height: 30%;
+    text-align: center;
+    font-weight: bold;
+}
+.simpleList{
+    list-style: none;
+}
+.simpleList li {
+    margin: 30px 0
+}
+.icons{
+    width: 30px;
+    height: 30px
+}
+.darkSide{
+    width: 50%;
+    background-color: rgb(22,32,43)
+}
+.secondRow{
+    width: 100%;
+    height: 10%;
+    background-color: rgb(22,32,43);
+    color: white
+}
