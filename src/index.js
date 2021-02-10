@@ -4,9 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import { Router } from "react-router-dom"
+import {createBrowserHistory} from 'history'
+
+import reducer from './Reducers/MainReducer'
+
+let history = createBrowserHistory();
+
+let state = {
+  test: "sdfs"
+}
+
+let store = createStore(reducer, state, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router history={history}>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
