@@ -83,6 +83,20 @@
     align-items: center;
     padding-left: 20px
 }
+.modal-text2{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-left: 20px
+}
+.modal-text3{
+    font-size: 16px;
+    padding-left: 20px;
+    color:rgb(138, 159, 177);
+    line-height: 1.2;
+    font-weight: lighter;
+}
 .shell{
     margin-left: 20px;
     padding:  0 5px 0 5px;
@@ -112,12 +126,28 @@
     height: 40px;
 } */
 .input-name, .input-phone{
-    background-color: transparent;
+    display: block;
+    background-color: rgba(255, 228, 196, 0);
     color:white;
     height: 30px;
     font-size: 20px;
     width: 85%;
-    height:  50px;
+    border: none;
+    outline: none;
+}
+.birth-container{
+    margin-top: 16px;
+}
+.user-birth-month{
+    width: 30%
+}
+.input-birth-month{
+    display: block;
+    background-color: rgba(255, 228, 196, 0);
+    color:white;
+    height: 30px;
+    font-size: 20px;
+    width: 85%;
     border: none;
     outline: none;
 }

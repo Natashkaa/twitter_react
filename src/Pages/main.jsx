@@ -49,9 +49,9 @@ export default class App extends Component {
                                     <div className="shell">
                                       <div className="shell-row1">
                                         <div className="div-name">Имя</div>
-                                        <div className="div-name-length">0/10</div>
+                                        <div className="div-name-length">0/50</div>
                                       </div>
-                                      <input className="input-name"></input>
+                                      <input className="input-name" type="text" maxLength="50"></input>
                                     </div>
                                   </div>
                                   <div className="user-phone">
@@ -62,7 +62,27 @@ export default class App extends Component {
                                       <input className="input-phone"></input>
                                     </div>
                                   </div>
+                                  <div className="modal-text2">Дата рождения</div>
+                                  <div className="modal-text3">Эта информация не будет общедоступной. Подтвердите свой возраст, даже если эта учетная запись предназначена для компании, домашнего животного и т. д.</div>
+                                  
+                                  <div className="birth-container">
+                                  <div className="user-birth-month">
+                                    <div className="shell">
+                                      <div className="shell-row1">
+                                        <div className="div-name">Месяц</div>
+                                      </div>
+                                      <select className="input-birth-month">
+                                        <option selected value="decemder">Декабрь</option><option value="january">Январь</option><option value="february">Февраль</option>
+                                        <option value="march">Март</option><option value="april">Апрель</option><option value="may">Май</option>
+                                        <option value="june">Июнь</option><option value="july">Июль</option><option value="august">Август</option>
+                                        <option value="september">Сентябрь</option><option value="october">Октябрь</option><option value="november">Ноябрь</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  </div>
                                 </div>
+                                
+                                
                               <button className="btn-next" onClick={() => { this.props.history.push(this.props.match.url) }}>Назад</button>
                             </div>
                           </Modal>
