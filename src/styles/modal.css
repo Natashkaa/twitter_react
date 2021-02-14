@@ -102,9 +102,9 @@
     padding:  0 5px 0 5px;
     background-color: rgba(240, 163, 163, 0);
     color:rgb(33, 151, 248);
-    border: 2px solid rgb(57,144,217);
     border-radius: 10px;
     margin-bottom: 20px;
+    border: 2px solid rgb(57,144,217);
 }
 .shell-row1{
     background-color: rgba(105, 90, 205, 0);
@@ -113,7 +113,7 @@
     align-items: center;
     margin-top: 5px;
 }
-.div-name, .div-phone{
+.div-name, .div-email{
     font-size: 12px;
 }
 .div-name-length{
@@ -125,7 +125,7 @@
     background-color: turquoise;
     height: 40px;
 } */
-.input-name, .input-phone{
+.input-name, .input-email{
     display: block;
     background-color: rgba(255, 228, 196, 0);
     color:white;
@@ -143,8 +143,8 @@
 }
 .input-birth-month{
     display: block;
-    background-color: rgba(255, 228, 196, 0);
-    color:white;
+    background-color: rgb(22,32,43);
+    color:rgb(255, 255, 255);
     height: 30px;
     font-size: 20px;
     width: 85%;

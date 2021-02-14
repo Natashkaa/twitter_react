@@ -5,10 +5,28 @@ import { Route, Link } from "react-router-dom";
 import people from '../icons/people.png';
 import search from '../icons/search.png';
 import cloud from '../icons/cloud.png';
-import bird from  '../icons/bird.png'
-import Modal from "./modal"
+import bird from  '../icons/bird.png';
+import Modal from "./modal";
+import SelectDay from "../Components/selectDay";
 
 export default class App extends Component {
+  constructor(props){
+    super(props);
+    this.handleMonthChange = this.handleMonthChange.bind(this);
+    this.state = { 
+      Full_Name: "",
+      User_Login: "",
+      Birth_Month: "march",
+      Birth_Day: "",
+      Birth_Year: "",
+      User_Password: ""
+    }
+  }
+ 
+  handleMonthChange = event => {
+    console.log('old month '+ this.state.Birth_Month);
+    this.setState({ Birth_Month: event.target.value});
+  }
   render() {
     return (
       <div className="App container-fluid m-0 p-0">
@@ -54,12 +72,12 @@ export default class App extends Component {
                                       <input className="input-name" type="text" maxLength="50"></input>
                                     </div>
                                   </div>
-                                  <div className="user-phone">
+                                  <div className="user-email">
                                     <div className="shell">
                                       <div className="shell-row1">
-                                        <div className="div-phone">Телефон</div>
+                                        <div className="div-email">Email</div>
                                       </div>
-                                      <input className="input-phone"></input>
+                                      <input className="input-email" maxLength="70"></input>
                                     </div>
                                   </div>
                                   <div className="modal-text2">Дата рождения</div>
@@ -71,12 +89,13 @@ export default class App extends Component {
                                       <div className="shell-row1">
                                         <div className="div-name">Месяц</div>
                                       </div>
-                                      <select className="input-birth-month">
-                                        <option selected value="decemder">Декабрь</option><option value="january">Январь</option><option value="february">Февраль</option>
+                                      <select id="Birth_Month" className="input-birth-month" value={this.state.Birth_Month} onChange={this.handleMonthChange}>
+                                        <option value="december">Декабрь</option><option value="january">Январь</option><option value="february">Февраль</option>
                                         <option value="march">Март</option><option value="april">Апрель</option><option value="may">Май</option>
                                         <option value="june">Июнь</option><option value="july">Июль</option><option value="august">Август</option>
                                         <option value="september">Сентябрь</option><option value="october">Октябрь</option><option value="november">Ноябрь</option>
                                       </select>
+                                      {/* <SelectDay selectedMonth={this.state.Birth_Month}/> */}
                                     </div>
                                   </div>
                                   </div>
