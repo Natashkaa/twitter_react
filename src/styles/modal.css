@@ -137,11 +137,18 @@
 }
 .birth-container{
     margin-top: 16px;
+    display: flex;
 }
 .user-birth-month{
-    width: 30%
+    width: 170px
 }
-.input-birth-month{
+.user-birth-day{
+    width: 100px
+}
+.user-birth-year{
+    width: 120px
+}
+.input-birth-month, .input-birth-year{
     display: block;
     background-color: rgb(22,32,43);
     color:rgb(255, 255, 255);
