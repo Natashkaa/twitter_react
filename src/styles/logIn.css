@@ -1,0 +1,88 @@
+@media (min-width: 1000px){
+    .sec-container{
+        background-color: rgb(43, 153, 226);
+        width: 20%
+    }
+}
+@media (min-width: 700px) and (max-width: 1000px) {
+    .sec-container{
+        background-color: rgb(43, 153, 226);
+        width: 50%
+    }
+}
+@media (min-width: 100px) and (max-width: 700px) {
+    .sec-container{
+        background-color: rgb(43, 153, 226);
+        width: 100%
+    }
+}
+.main-container{
+    background-color: rgb(32, 32, 32);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.sec-container{
+    background-color: rgba(255, 191, 191, 0);
+    padding-top: 20px;
+}
+.bird-icon{
+    padding-bottom: 20px;
+}
+.bird{
+    width: 40px;
+    height: 40px;
+}
+.text1{
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    background-color: rgba(95, 226, 43, 0);
+    width: 100%
+}
+.user-email-log, .user-name-log{
+    margin-top: 10px
+}
+.shell-log{
+    margin: 0 20px;
+    padding:  0 5px 0 5px;
+    background-color: rgba(240, 163, 163, 0);
+    color:rgb(33, 151, 248);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(57,144,217);
+}
+.shell-log-row1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+.div-name-length-log{
+    font-size: 12px;
+    font-style: italic;
+    color: white;
+    float: right;
+    position: absolute;
+    right: 20px
+}
+.btn-log-in{
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90% !important;
+    height: 45px;
+    border-radius: 50px;
+    outline: none !important;
+    border: 1px solid rgb(64,160,241);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transition: 0.2s;
+    background-color: rgb(34, 134, 241);
+}
+.btn-log-in:hover{
+    background-color: rgb(111, 152, 196);
+    color: white
+}

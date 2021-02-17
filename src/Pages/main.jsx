@@ -78,9 +78,9 @@ export default class App extends Component {
                 <div className="phrase2">Присоединяйтесь к Твиттеру прямо сейчас!</div>
                 <div className="btn-block">
                   <button className="btn-signIn">
-                    <Link style={{color: "white"}} to={`${this.props.match.url}/edit`}>Зарегистрироваться</Link>
+                    <Link style={{color: "white"}} to={`${this.props.match.url}/SignIn`}>Зарегистрироваться</Link>
                     <Route
-                      path={`${this.props.match.url}/edit`}
+                      path={`${this.props.match.url}/SignIn`}
                       render={() => {
                         return (
                           <Modal
@@ -116,9 +116,7 @@ export default class App extends Component {
                                   
                                   <SelectBirthday onMonthChange={this.handleMonthChange} onDayChange={this.handleDayChange} onYearChange={this.handleYearChange}
                                                   selectedMonth={this.state.Birth_Month} selectedDay={this.state.Birth_Day} selectedYear={this.state.Birth_Year}/>
-                                  
                                 </div>
-                                
                                 
                               <button className="btn-next" onClick={() => { this.props.history.push(this.props.match.url) }}>Назад</button>
                             </div>
@@ -128,7 +126,11 @@ export default class App extends Component {
                     />
                   </button>
                 </div>
-                <div className="btn-block"><button className="btn-logIn">Войти</button></div>
+                <div className="btn-block">
+                  <Link className="btn-logIn" to='/logIn'>
+                    <span>Войти</span>
+                  </Link>
+                </div>
             </div>
           </div>
         </div>

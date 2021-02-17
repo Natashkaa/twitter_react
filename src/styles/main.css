@@ -87,7 +87,7 @@
     font-size: 30px;
 }
 .btn-block{
-    width:100%;
+    width: 100%;
     margin-top: 20px;
 }
 .btn-signIn{
@@ -105,7 +105,10 @@
     background-color: rgb(57,144,217);
 }
 .btn-logIn{
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
     height: 45px;
     border-radius: 50px;
     outline: none !important;
@@ -117,12 +120,8 @@
 }
 .btn-logIn:hover{
     background-color: rgb(27,45,64);
+    color: white
 }
-
-
-
-
-
 
 .secondRow{
     width: 100%;
