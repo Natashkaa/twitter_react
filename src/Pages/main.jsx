@@ -7,7 +7,7 @@ import search from '../icons/search.png';
 import cloud from '../icons/cloud.png';
 import bird from  '../icons/bird.png';
 import Modal from "./modal";
-import SelectDay from "../Components/selectDay";
+import SelectBirthday from "../Components/SelectBirthday";
 
 const LongMonths = {
   january: 31,
@@ -35,7 +35,7 @@ export default class App extends Component {
       User_Login: "",
       Birth_Month: "january",
       Birth_Day: "1",
-      Birth_Year: "1901",
+      Birth_Year: new Date().getFullYear(),
       User_Password: ""
     }
   }
@@ -52,7 +52,8 @@ export default class App extends Component {
   handleYearChange = event => {
     this.setState({ Birth_Year: event.target.value});
     console.log(parseInt(event.target.value) % 4);
-    if(!parseInt(event.target.value) % 4 && this.state.Birth_Month == " february"){
+    if(parseInt(event.target.value) % 4 != 0 && this.state.Birth_Month == "february"){
+      console.log("високосный год");
       this.setState({ Birth_Day: 1});
     }
   }
@@ -113,43 +114,8 @@ export default class App extends Component {
                                   <div className="modal-text2">Дата рождения</div>
                                   <div className="modal-text3">Эта информация не будет общедоступной. Подтвердите свой возраст, даже если эта учетная запись предназначена для компании, домашнего животного и т. д.</div>
                                   
-                                  <div className="birth-container">
-                                    <div className="user-birth-month">
-                                      <div className="shell">
-                                        <div className="shell-row1">
-                                          <div className="div-name">Месяц</div>
-                                        </div>
-                                        <select id="Birth_Month" className="input-birth-month" value={this.state.Birth_Month} onChange={this.handleMonthChange}>
-                                          <option value="december">Декабрь</option><option value="january">Январь</option><option value="february">Февраль</option>
-                                          <option value="march">Март</option><option value="april">Апрель</option><option value="may">Май</option>
-                                          <option value="june">Июнь</option><option value="july">Июль</option><option value="august">Август</option>
-                                          <option value="september">Сентябрь</option><option value="october">Октябрь</option><option value="november">Ноябрь</option>
-                                        </select>
-                                      </div>
-                                    </div>
-
-                                    <div className="user-birth-day">
-                                      <div className="shell">
-                                        <div className="shell-row1">
-                                          <div className="div-name">Число</div>
-                                        </div>
-                                        <SelectDay onDayChange={this.handleDayChange} selectedMonth={this.state.Birth_Month} selectedDay={this.state.Birth_Day} selectedYear={this.state.Birth_Year}/>
-                                      </div>
-                                    </div>
-
-                                    <div className="user-birth-year">
-                                      <div className="shell">
-                                        <div className="shell-row1">
-                                          <div className="div-name">Год</div>
-                                        </div>
-                                        <select id="Birth_Year" className="input-birth-year" value={this.state.Birth_Year} onChange={this.handleYearChange}>
-                                          <option value="1901">1901</option><option value="1902">1902</option><option value="1903">1903</option>
-                                          <option value="1904">1904</option>
-                                        </select>
-                                      </div>
-                                    </div>
-
-                                  </div>
+                                  <SelectBirthday onMonthChange={this.handleMonthChange} onDayChange={this.handleDayChange} onYearChange={this.handleYearChange}
+                                                  selectedMonth={this.state.Birth_Month} selectedDay={this.state.Birth_Day} selectedYear={this.state.Birth_Year}/>
                                   
                                 </div>
                                 
