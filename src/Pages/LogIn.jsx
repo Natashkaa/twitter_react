@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Link } from "react-router-dom";
 import "../styles/logIn.css"
 import bird from  '../icons/bird.png';
 
@@ -40,7 +41,6 @@ export default class LogIn extends Component{
                                 <div className="shell-log">
                                     <div className="shell-log-row1">
                                         <div className="div-name">Пароль</div>
-                                        <div className="div-name-length-log">0/50</div>
                                     </div>
                                     <input id="User_Password" name="User_Password" 
                                            className="input-name" type="password" maxLength="50"
@@ -51,6 +51,7 @@ export default class LogIn extends Component{
                         </div>
                         <button type="submit" className="btn-log-in">Далее</button>
                     </form>
+                    <Link style={{color: "white"}} to={`/main/SignIn`}>Зарегистрироваться в Твиттере</Link>
                 </div>
             </div>
         )

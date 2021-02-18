@@ -10,18 +10,18 @@ import Modal from "./modal";
 import SelectBirthday from "../Components/SelectBirthday";
 
 const LongMonths = {
-  january: 31,
-  february: 28,
-  march: 31,
-  april: 30,
-  may: 31,
-  june: 30,
-  july: 31,
-  august: 31,
-  september: 30,
-  october: 31,
-  november: 30,
-  december: 31
+  "1": 31,
+  "2": 28,
+  "3": 31,
+  "4": 30,
+  "5": 31,
+  "6": 30,
+  "7": 31,
+  "8": 31,
+  "9": 30,
+  "10": 31,
+  "11": 30,
+  "12": 31
 }
 
 export default class App extends Component {
@@ -33,8 +33,8 @@ export default class App extends Component {
     this.state = { 
       Full_Name: "",
       User_Login: "",
-      Birth_Month: "january",
-      Birth_Day: "1",
+      Birth_Month: "4",
+      Birth_Day: "2",
       Birth_Year: new Date().getFullYear(),
       User_Password: ""
     }
@@ -43,7 +43,7 @@ export default class App extends Component {
   handleMonthChange = event => {
     this.setState({ Birth_Month: event.target.value});
     if(LongMonths[event.target.value] < parseInt(this.state.Birth_Day)){
-      this.setState({ Birth_Day: 1});
+      this.setState({ Birth_Day: "1"});
     }
   }
   handleDayChange = event => {
@@ -52,9 +52,8 @@ export default class App extends Component {
   handleYearChange = event => {
     this.setState({ Birth_Year: event.target.value});
     console.log(parseInt(event.target.value) % 4);
-    if(parseInt(event.target.value) % 4 != 0 && this.state.Birth_Month == "february"){
-      console.log("високосный год");
-      this.setState({ Birth_Day: 1});
+    if(parseInt(event.target.value) % 4 != 0 && this.state.Birth_Month == "2"){
+      this.setState({ Birth_Day: "1"});
     }
   }
   render() {

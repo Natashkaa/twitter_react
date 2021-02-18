@@ -63,9 +63,6 @@
     font-size: 12px;
     font-style: italic;
     color: white;
-    float: right;
-    position: absolute;
-    right: 20px
 }
 .btn-log-in{
     margin: 0 20px;

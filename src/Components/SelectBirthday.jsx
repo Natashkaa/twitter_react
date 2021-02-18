@@ -2,23 +2,23 @@ import React, { Component } from "react";
 import "../styles/modal.css"
 
 const LongMonths = {
-  january: 31,
-  february: 28,
-  march: 31,
-  april: 30,
-  may: 31,
-  june: 30,
-  july: 31,
-  august: 31,
-  september: 30,
-  october: 31,
-  november: 30,
-  december: 31
+  "1": 31,
+  "2": 28,
+  "3": 31,
+  "4": 30,
+  "5": 31,
+  "6": 30,
+  "7": 31,
+  "8": 31,
+  "9": 30,
+  "10": 31,
+  "11": 30,
+  "12": 31
 }
 var daysList = [];
 function CompleteMonth(year, month){
   daysList = [];
-  if(month == "february"){
+  if(month === "2"){
     if(parseInt(year) % 4){
       for (let index = 1; index <= 28; index++) {
         daysList.push(<option key={`key-${index}`} value={index}>{index}</option>)
@@ -50,11 +50,20 @@ export default class SelectBirthday extends Component {
       year: props.selectedYear
     }
   }
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.selectedMonth !== this.props.selectedMonth || nextProps.selectedYear !== this.props.selectedYear) {
-      this.setState({ month: nextProps.selectedMonth, year: nextProps.selectedYear});
+  static getDerivedStateFromProps(props, state){
+    // if(props.currentRow !== state.lastRow){
+    //   return { month: props.selectedMonth, day: props.selectedDay, year: props.selectedYear};
+    // }
+    if(props.selectedMonth !== state.selectedMonth || props.selectedYear !== state.selectedYear){
+      return { month: props.selectedMonth, day: props.selectedDay, year: props.selectedYear};
     }
+    return null;
   }
+  // componentWillReceiveProps(nextProps) {
+  //   if(nextProps.selectedMonth !== this.props.selectedMonth || nextProps.selectedYear !== this.props.selectedYear) {
+  //     this.setState({ month: nextProps.selectedMonth, day: nextProps.selectedDay, year: nextProps.selectedYear});
+  //   }
+  // }
   render() {
     CompleteMonth(this.state.year, this.state.month);
     CompleteYears();
@@ -66,10 +75,10 @@ export default class SelectBirthday extends Component {
                 <div className="div-name">Месяц</div>
               </div>
               <select id="Birth_Month" className="input-birth-month" value={this.state.month} onChange={this.props.onMonthChange}>
-                <option value="december">Декабрь</option><option value="january">Январь</option><option value="february">Февраль</option>
-                <option value="march">Март</option><option value="april">Апрель</option><option value="may">Май</option>
-                <option value="june">Июнь</option><option value="july">Июль</option><option value="august">Август</option>
-                <option value="september">Сентябрь</option><option value="october">Октябрь</option><option value="november">Ноябрь</option>
+                <option value="12">Декабрь</option><option value="1">Январь</option><option value="2">Февраль</option>
+                <option value="3">Март</option><option value="4">Апрель</option><option value="5">Май</option>
+                <option value="6">Июнь</option><option value="7">Июль</option><option value="8">Август</option>
+                <option value="9">Сентябрь</option><option value="10">Октябрь</option><option value="11">Ноябрь</option>
               </select>
             </div>
           </div>
