@@ -30,14 +30,30 @@ export default class App extends Component {
     this.handleMonthChange = this.handleMonthChange.bind(this);
     this.handleDayChange = this.handleDayChange.bind(this);
     this.handleYearChange = this.handleYearChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleLoginChange = this.handleLoginChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.state = { 
       Full_Name: "",
       User_Login: "",
+
       Birth_Month: "4",
       Birth_Day: "2",
       Birth_Year: new Date().getFullYear(),
-      User_Password: ""
+      User_Password: "",
+      NameLengthCount: 0,
+      LoginLengthCount: 0
     }
+  }
+  handleNameChange = event => {
+    this.setState({ Full_Name: event.target.value, NameLengthCount: event.target.value.length })
+    console.log("NAME IS " + this.state.Full_Name + " LENGTH IS " + this.state.Full_Name.length + " COUNT IS " + this.state.NameLengthCount);
+  }
+  handleLoginChange = event => {
+    this.setState({ User_Login: event.target.value, LoginLengthCount: event.target.value.length });
+  }
+  handlePasswordChange = event => {
+    this.setState({ User_Password: event.target.value});
   }
  
   handleMonthChange = event => {
@@ -97,9 +113,18 @@ export default class App extends Component {
                                     <div className="shell">
                                       <div className="shell-row1">
                                         <div className="div-name">Имя</div>
-                                        <div className="div-name-length">0/50</div>
+                                        <div className="div-name-length">{this.state.NameLengthCount}/50</div>
                                       </div>
-                                      <input className="input-name" type="text" maxLength="50"></input>
+                                      <input id="Full_Name" name="Full_Name" className="input-name" type="text" maxLength="50" onChange={this.handleNameChange} value={this.state.Full_Name}></input>
+                                    </div>
+                                  </div>
+                                  <div className="user-name">
+                                    <div className="shell">
+                                      <div className="shell-row1">
+                                        <div className="div-name">Логин</div>
+                                        <div className="div-name-length">{this.state.LoginLengthCount}/50</div>
+                                      </div>
+                                      <input id="User_Login" name="User_Login" className="input-name" type="text" maxLength="50" onChange={this.handleLoginChange} value={this.state.User_Login}></input>
                                     </div>
                                   </div>
                                   <div className="user-email">
@@ -107,7 +132,15 @@ export default class App extends Component {
                                       <div className="shell-row1">
                                         <div className="div-email">Email</div>
                                       </div>
-                                      <input className="input-email" maxLength="70"></input>
+                                      <input className="input-email" type="text" maxLength="70"></input>
+                                    </div>
+                                  </div>
+                                  <div className="user-name">
+                                    <div className="shell">
+                                      <div className="shell-row1">
+                                        <div className="div-name">Пароль</div>
+                                      </div>
+                                      <input id="User_Password" name="User_Password" className="input-name" type="password" maxLength="50" onChange={this.handlePasswordChange} value={this.state.User_Password}></input>
                                     </div>
                                   </div>
                                   <div className="modal-text2">Дата рождения</div>
