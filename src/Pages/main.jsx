@@ -33,16 +33,19 @@ export default class App extends Component {
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleLoginChange = this.handleLoginChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.state = { 
       Full_Name: "",
       User_Login: "",
-
+      User_Email: "",
       Birth_Month: "4",
       Birth_Day: "2",
       Birth_Year: new Date().getFullYear(),
       User_Password: "",
       NameLengthCount: 0,
-      LoginLengthCount: 0
+      LoginLengthCount: 0,
+      Errors: "There is a block for errors after fetch user data"
     }
   }
   handleNameChange = event => {
@@ -51,6 +54,9 @@ export default class App extends Component {
   }
   handleLoginChange = event => {
     this.setState({ User_Login: event.target.value, LoginLengthCount: event.target.value.length });
+  }
+  handleEmailChange = event => {
+    this.setState({ User_Email: event.target.value});
   }
   handlePasswordChange = event => {
     this.setState({ User_Password: event.target.value});
@@ -70,6 +76,27 @@ export default class App extends Component {
     console.log(parseInt(event.target.value) % 4);
     if(parseInt(event.target.value) % 4 != 0 && this.state.Birth_Month == "2"){
       this.setState({ Birth_Day: "1"});
+    }
+  }
+  onSubmit = async event => {
+    event.preventDefault();
+    var newUser = { Full_Name: this.state.Full_Name,
+                    User_Login: this.state.User_Login,
+                    User_Email: this.state.User_Email,
+                    Birth: this.state.Birth_Day + "/" + this.state.Birth_Month + "/" + this.state.Birth_Year,
+                    User_Password: this.state.User_Password }
+    let res  = await fetch("http://localhost:5000/api/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newUser)
+    }).then(resp => resp.json());
+    if(res.success){
+      this.setState({Errors: "All good"})
+    }
+    else{
+      this.setState({Errors: "Something went wrong"})
     }
   }
   render() {
@@ -103,9 +130,11 @@ export default class App extends Component {
                               this.props.history.push(this.props.match.url);
                             }}>
                             <div className="modal">
+                              <form onSubmit={this.onSubmit}>
                                 <div className="modal-head">
+                                <button className="btn-back" onClick={() => { this.props.history.push(this.props.match.url) }}>Назад</button>
                                   <div className="bird-container"><img className="bird" src={bird}/></div>
-                                  <button className="btn-next">Далее</button>
+                                  <input type="submit" className="btn-next" value="Далее"></input>
                                 </div>
                                 <div className="modal-body">
                                   <div className="modal-text1">Создайте свою учетную запись</div>
@@ -132,7 +161,7 @@ export default class App extends Component {
                                       <div className="shell-row1">
                                         <div className="div-email">Email</div>
                                       </div>
-                                      <input className="input-email" type="text" maxLength="70"></input>
+                                      <input className="input-email" type="text" maxLength="70" onChange={this.handleEmailChange} value={this.state.User_Email}></input>
                                     </div>
                                   </div>
                                   <div className="user-name">
@@ -149,8 +178,10 @@ export default class App extends Component {
                                   <SelectBirthday onMonthChange={this.handleMonthChange} onDayChange={this.handleDayChange} onYearChange={this.handleYearChange}
                                                   selectedMonth={this.state.Birth_Month} selectedDay={this.state.Birth_Day} selectedYear={this.state.Birth_Year}/>
                                 </div>
-                                
-                              <button className="btn-next" onClick={() => { this.props.history.push(this.props.match.url) }}>Назад</button>
+                                <div className="fetch-error-block">
+                                  <div>{this.state.Errors}</div>
+                                </div>
+                              </form>
                             </div>
                           </Modal>
                         );
