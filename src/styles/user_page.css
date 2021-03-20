@@ -9,6 +9,9 @@
     .left-menu-block{
         width: 30%;
     }
+    .right-block{
+        width: 70%;
+    }
     .new-tweet-icon{
         display: none
     }
@@ -28,6 +31,9 @@
     .left-menu-block{
         width: 15%;
     }
+    .right-block{
+        width: 85%;
+    }
     .new-tweet-icon{
         display: block;
         margin-right: 0 !important;
@@ -37,6 +43,9 @@
         width: 30px;
         height: 30px;
         margin-left: 10px
+    }
+    .lil-info-container{
+        display: none
     }
 }
 @media (min-width: 100px) and (max-width: 700px) {
@@ -46,8 +55,14 @@
     .menu-list{
         width: 100%;
     }
+    .left-user-info{
+        width: 100%;
+    }
     .left-menu-block{
-        width: 15%;
+        width: 20%;
+    }
+    .right-block{
+        width: 80%;
     }
     .new-tweet-icon{
         display: block;
@@ -58,6 +73,13 @@
         width: 30px;
         height: 30px;
         margin-left: 10px
+    }
+    .lil-info-container{
+        display: none
+    }
+    .logout-li{
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 
@@ -74,9 +96,9 @@
     overflow-x: hidden;
 }
 .menu-list{
-    background-color: rgba(180, 188, 143, 0);
-    height: 95%;
+    background-color: rgba(209, 238, 82, 0);
     padding: 0;
+    margin-bottom: 0;
     list-style: none;
 }
 .special-icon-bird{
@@ -84,7 +106,6 @@
     height: 50px;
 }
 .menu-list > li{
-    margin: 0;
     width: 100%;
     font-weight: 700;
     font-size: 20px;
@@ -93,7 +114,8 @@
     display: flex;
     align-items: center;
     border: 1px solid rgb(0, 0, 0);
-    padding: 15px 5px
+    padding: 15px 5px;
+    margin: 0;
 }
 .menu-icons{
     width: 30px;
@@ -127,4 +149,48 @@
 }
 .new-tweet-btn:hover{
     background-color: rgb(17, 94, 209);
+}
+
+.logout-li:hover{
+    background-color: rgba(137, 161, 206, 0.404);
+    border-radius: 50px;
+}
+.lil-prof-icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgb(68, 64, 105)
+}
+.lil-info-container{
+    background-color: rgba(222, 184, 135, 0);
+    width: 100%;
+    text-align: left;
+    padding-left: 10px
+}
+.username-info{
+    width: 100%;
+    color: white;
+}
+.userlogin-info{
+    width: 100%;
+    color: rgb(156, 171, 190);
+    font-weight: lighter;
+}
+.btn-logout{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none !important
+}
+
+.top-fix-header{
+    background-color: lavender;
+    position: fixed;
+    width: 100%;
+}
+.right-block{
+    overflow: auto;
+    overflow-x: hidden;
 }
