@@ -88,9 +88,10 @@
     height: 100%;
     background-color: rgb(22,32,43);
     display: flex;
+    
 }
 .left-menu-block{
-    border-right: 2px solid rgb(187, 211, 255);
+    border-right: 1px solid rgb(89, 94, 105);
     background-color: rgb(22,32,43);
     overflow: auto;
     overflow-x: hidden;
@@ -113,7 +114,7 @@
     background-color: rgba(116, 137, 202, 0);
     display: flex;
     align-items: center;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0);
     padding: 15px 5px;
     margin: 0;
 }
@@ -185,12 +186,76 @@
     outline: none !important
 }
 
-.top-fix-header{
-    background-color: lavender;
-    position: fixed;
-    width: 100%;
-}
+/*block with tweets*/
 .right-block{
     overflow: auto;
     overflow-x: hidden;
+}
+.top-fix-header{
+    background-color: rgb(22,32,43);
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding-left: 20px;
+    border-bottom: 1px solid rgb(89, 94, 105);
+    z-index: 100;
+}
+.btn-go-top{
+    background-color: transparent;
+    color: white;
+    font-weight: bolder;
+    font-size: 22px;
+    border: none;
+    outline: none  !important;
+}
+
+.tweet-amount{
+    color: rgb(185, 185, 185);
+    text-align: left !important;
+    padding-left: 10px
+}
+
+.user-background-block{
+    height: 200px;
+    width: 100%;
+}
+.user-background{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.user-data-block{
+    color: white
+}
+.first-row{
+    position: relative;
+    background-color: rgba(240, 230, 140, 0);
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+.user-prof-icon{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid rgb(22,32,43);
+    position: absolute;
+    top: -50%;
+    z-index: 0;
+}
+.btn-edit-profile{
+    background-color: transparent;
+    border: 3px solid rgb(45, 129, 255);
+    color: rgb(45, 129, 255);
+    border-radius: 50px;
+    height: 70px;
+    width: 300px
 }
