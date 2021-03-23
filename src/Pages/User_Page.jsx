@@ -11,6 +11,8 @@ import New_Tweet from "../icons/tweet_ic.png";
 import Test_Icon from "../icons/ana.jpg";
 import LogOut from "../icons/log_out_ic.png";
 import TestBcg from "../images/test_background.jpg";
+import Balloon from "../icons/balloon_ic.png"
+import Calendar from "../icons/calendar_ic.png"
 
 export default class User_Page extends Component{
     constructor(props){
@@ -56,11 +58,18 @@ export default class User_Page extends Component{
                             <img className="user-background" src={TestBcg} title="your background"/>
                         </div>
                         <div className="user-data-block container-fluid m-0 p-0">
-                            <div className="row flex-row no-gutters first-row">
+                            <div className="row flex-row no-gutters first-row-1">
                                 <img className="user-prof-icon" src={Test_Icon}/>
                                 <input className="btn-edit-profile" type="button" value="Изменить профиль"></input>
                             </div>
-                            <div>SDFSDFSDFSDFSDFSD</div>
+                            <div className="container-fluid m-0 pl-0 pb-3 pt-3 second-row-1 d-flex flex-column">
+                                <div className="user-data-name col-12">USER NAME</div>
+                                <div className="user-data-login col-12">@user login</div>
+                                <div className="user-data-birth col-12">
+                                    <img className="birth-icon" src={Balloon} alt="birth"/>Дата рождения: 24.04.1998</div>
+                                <div className="user-data-registr col-12">
+                                    <img className="registr-icon" src={Calendar} alt="registration"/>Регистрация: 10.10.2010</div>
+                            </div>
                         </div>
                     </div>
                 </div>

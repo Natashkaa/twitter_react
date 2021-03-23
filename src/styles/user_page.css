@@ -20,6 +20,16 @@
         width: 80%;
         height: 50px;
     }
+    .first-row-1{
+        height: 100px;
+    }
+    .user-prof-icon{
+        width: 200px;
+        height: 200px; 
+    }
+    .btn-edit-profile{
+        width: 300px
+    }
 }
 @media (min-width: 700px) and (max-width: 1000px) {
     .li-name{
@@ -46,6 +56,16 @@
     }
     .lil-info-container{
         display: none
+    }
+    .first-row-1{
+        height: 90px;
+    }
+    .user-prof-icon{
+        width: 180px;
+        height: 180px; 
+    }
+    .btn-edit-profile{
+        width: 260px
     }
 }
 @media (min-width: 100px) and (max-width: 700px) {
@@ -80,6 +100,16 @@
     .logout-li{
         display: flex;
         flex-wrap: wrap;
+    }
+    .first-row-1{
+        height: 75px;
+    }
+    .user-prof-icon{
+        width: 150px;
+        height: 150px; 
+    }
+    .btn-edit-profile{
+        width: 180px
     }
 }
 
@@ -202,7 +232,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-content: space-between;
-    padding-left: 20px;
+    padding-left: 10px;
     border-bottom: 1px solid rgb(89, 94, 105);
     z-index: 100;
 }
@@ -214,11 +244,10 @@
     border: none;
     outline: none  !important;
 }
-
 .tweet-amount{
-    color: rgb(185, 185, 185);
+    color:rgb(89, 94, 105);
     text-align: left !important;
-    padding-left: 10px
+    padding-left: 10px;
 }
 
 .user-background-block{
@@ -234,28 +263,65 @@
 .user-data-block{
     color: white
 }
-.first-row{
+.first-row-1{
     position: relative;
     background-color: rgba(240, 230, 140, 0);
     width: 100%;
-    height: 150px;
-    display: flex;
-    align-items: center;
 }
 .user-prof-icon{
-    width: 200px;
-    height: 200px;
     border-radius: 50%;
     border: 5px solid rgb(22,32,43);
     position: absolute;
-    top: -50%;
+    top: -100%;
+    left: 0;
     z-index: 0;
 }
 .btn-edit-profile{
     background-color: transparent;
-    border: 3px solid rgb(45, 129, 255);
+    border: 1px solid rgb(45, 129, 255);
     color: rgb(45, 129, 255);
     border-radius: 50px;
-    height: 70px;
-    width: 300px
+    height: 50px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transition: 1s;
+}
+.btn-edit-profile:hover{
+    background-color: rgba(45, 129, 255, 0.103);
+}
+.second-row-1{
+    background-color: rgba(255, 0, 0, 0);
+    border-bottom: 1px solid rgb(89, 94, 105);
+}
+.user-data-name{
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(222, 184, 135, 0);
+    text-align: left;
+}
+.user-data-login{
+    background-color: rgba(179, 125, 55, 0);
+    text-align: left;
+    line-height: 1;
+    color:rgb(89, 94, 105)
+}
+.user-data-birth{
+    background-color: rgba(119, 87, 44, 0);
+    text-align: left;
+    margin-top: 10px;
+    color:rgb(89, 94, 105)
+}
+.user-data-registr{
+    background-color: rgba(68, 47, 19, 0);
+    text-align: left;
+    color:rgb(89, 94, 105)
+}
+.birth-icon{
+    width: 15px;
+    padding-right: 5px;
+}
+.registr-icon{
+    width: 25px;
+    padding-right: 5px;
 }
